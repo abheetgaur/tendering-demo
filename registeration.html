@@ -1,52 +1,149 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Bidder Registration</title>
-  <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bidder Registration</title>
+    <style>
+        /* Style for the page */
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url('your-image-path.jpg'); /* Replace with the actual image URL */
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-attachment: fixed;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+
+        .form-container {
+            background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent background for the form */
+            padding: 20px;
+            margin: 50px auto;
+            width: 80%;
+            max-width: 800px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+            color: #005f6b;
+        }
+
+        label {
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        input, select, button {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+        }
+
+        input[type="file"] {
+            padding: 5px;
+        }
+
+        .file-upload {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        button {
+            background-color: #005f6b;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #007c8c;
+        }
+    </style>
 </head>
 <body>
-  <header>
-    <nav>
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="tenders.html">Active Tenders</a></li>
-        <li><a href="dashboard.html">Auto Evaluation Dashboard</a></li>
-        <li><a href="register.html">Bidder Registration</a></li>
-      </ul>
-    </nav>
-  </header>
 
-  <main>
-    <h1>Bidder Registration</h1>
-    <form id="registration-form">
-      <label for="name">Company Name:</label>
-      <input type="text" id="name" required><br><br>
+    <div class="form-container">
+        <h1>Bidder Registration</h1>
+        <form action="#" method="POST" enctype="multipart/form-data">
 
-      <label for="pan">PAN Number:</label>
-      <input type="text" id="pan" required><br><br>
+            <!-- Name of the Bidder -->
+            <label for="bidder-name">Name of the Bidder:</label>
+            <input type="text" id="bidder-name" name="bidder-name" required>
 
-      <label for="turnover">Annual Turnover:</label>
-      <input type="text" id="turnover" required><br><br>
+            <!-- Type of Firm Dropdown -->
+            <label for="firm-type">Type of Firm:</label>
+            <select id="firm-type" name="firm-type" required>
+                <option value="Proprietor">Proprietor</option>
+                <option value="Partnership">Partnership</option>
+                <option value="Company">Company</option>
+                <option value="PSU">PSU</option>
+                <option value="Startup">Startup</option>
+            </select>
 
-      <label for="gst">GST Certificate:</label>
-      <input type="file" id="gst" required><br><br>
+            <!-- Annual Turnover Inputs -->
+            <label for="turnover-2024-25">Annual Turnover in FY 2024-25:</label>
+            <input type="number" id="turnover-2024-25" name="turnover-2024-25" required>
 
-      <label for="pf">PF Certificate:</label>
-      <input type="file" id="pf" required><br><br>
+            <label for="turnover-2023-24">Annual Turnover in FY 2023-24:</label>
+            <input type="number" id="turnover-2023-24" name="turnover-2023-24" required>
 
-      <label for="documents">Additional Documents:</label>
-      <input type="file" id="documents" multiple><br><br>
+            <label for="turnover-2022-23">Annual Turnover in FY 2022-23:</label>
+            <input type="number" id="turnover-2022-23" name="turnover-2022-23" required>
 
-      <button type="submit">Submit</button>
-    </form>
-  </main>
+            <!-- File Upload Fields -->
+            <div class="file-upload">
+                <label for="turnover-file">Upload Annual Turnover Documents:</label>
+                <input type="file" id="turnover-file" name="turnover-file" required>
+            </div>
 
-  <footer>
-    <p>&copy; 2025 Tendering Automation</p>
-  </footer>
+            <!-- PAN Card -->
+            <label for="pan-card">PAN Card No.:</label>
+            <input type="text" id="pan-card" name="pan-card" required>
 
-  <script src="scripts.js"></script>
+            <div class="file-upload">
+                <label for="pan-card-file">Upload PAN Card:</label>
+                <input type="file" id="pan-card-file" name="pan-card-file" required>
+            </div>
+
+            <!-- GST No. -->
+            <label for="gst-no">GST No.:</label>
+            <input type="text" id="gst-no" name="gst-no" required>
+
+            <div class="file-upload">
+                <label for="gst-file">Upload GST Certificate:</label>
+                <input type="file" id="gst-file" name="gst-file" required>
+            </div>
+
+            <!-- PF Certificate -->
+            <label for="pf-certificate">PF Certificate:</label>
+            <input type="text" id="pf-certificate" name="pf-certificate" required>
+
+            <div class="file-upload">
+                <label for="pf-file">Upload PF Certificate:</label>
+                <input type="file" id="pf-file" name="pf-file" required>
+            </div>
+
+            <!-- IOCL Director Relationship -->
+            <label for="director-relationship">Are you related to any IOCL Director?</label>
+            <select id="director-relationship" name="director-relationship" required>
+                <option value="Yes">Yes</option>
+                <option value="No">No</option>
+            </select>
+
+            <!-- Submit Button -->
+            <button type="submit">Submit Registration</button>
+
+        </form>
+    </div>
+
 </body>
 </html>
+
