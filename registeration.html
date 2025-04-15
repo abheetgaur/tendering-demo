@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bidder Registration</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="tenders.html">Active Tenders</a></li>
+        <li><a href="dashboard.html">Auto Evaluation Dashboard</a></li>
+        <li><a href="register.html">Bidder Registration</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <h1>Bidder Registration</h1>
+    <form id="registration-form">
+      <label for="name">Company Name:</label>
+      <input type="text" id="name" required><br><br>
+
+      <label for="pan">PAN Number:</label>
+      <input type="text" id="pan" required><br><br>
+
+      <label for="turnover">Annual Turnover:</label>
+      <input type="text" id="turnover" required><br><br>
+
+      <label for="gst">GST Certificate:</label>
+      <input type="file" id="gst" required><br><br>
+
+      <label for="pf">PF Certificate:</label>
+      <input type="file" id="pf" required><br><br>
+
+      <label for="documents">Additional Documents:</label>
+      <input type="file" id="documents" multiple><br><br>
+
+      <button type="submit">Submit</button>
+    </form>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Tendering Automation</p>
+  </footer>
+
+  <script src="scripts.js"></script>
+</body>
+</html>
